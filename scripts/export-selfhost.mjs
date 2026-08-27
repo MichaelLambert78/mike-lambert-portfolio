@@ -34,8 +34,10 @@ try {
 
   // This portfolio has no client-side state. Removing the Vinext runtime turns
   // the server-rendered response into a portable static document for nginx.
+  // Keep the explicitly marked GoatCounter script for privacy-friendly traffic
+  // analytics while stripping the framework runtime.
   html = html
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/g, "")
+    .replace(/<script(?![^>]*data-goatcounter)[^>]*>[\s\S]*?<\/script>/g, "")
     .replace(/<link rel="modulepreload"[^>]*>/g, "")
     .replace(/ data-rsc-[a-z-]+="[^"]*"/g, "")
     .replace(/ data-precedence="[^"]*"/g, "");
