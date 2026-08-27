@@ -22,7 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <script
+          data-goatcounter="https://stats.waffle-cloud.com/count"
+          async
+          src="https://stats.waffle-cloud.com/count.js"
+        />
+      </body>
     </html>
   );
 }
