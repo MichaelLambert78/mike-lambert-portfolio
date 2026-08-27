@@ -12,6 +12,7 @@
   --cyan: #4bd8e8;
   --coral: #ff735c;
   --violet: #a78bfa;
+  --gold: #d9b56d;
 }
 
 * { box-sizing: border-box; }
@@ -39,8 +40,13 @@ main { min-height: 100vh; overflow: hidden; }
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
 }
-.monogram { font-size: 19px; font-weight: 800; letter-spacing: -0.05em; }
-.monogram span { color: var(--coral); }
+.monogram { display: block; }
+.portfolio-brand-logo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
 .site-nav > div { display: flex; gap: 34px; }
 .site-nav > div a { display: flex; align-items: center; gap: 7px; color: #a9b3bf; font-size: 13px; font-weight: 600; }
 .site-nav > div a:hover { color: white; }
@@ -124,6 +130,7 @@ main { min-height: 100vh; overflow: hidden; }
 .orbit-one { top: 2%; left: 43%; color: #ff9b8a; border-color: rgba(255,115,92,.35); }
 .orbit-two { top: 58%; right: -1%; color: #89e8f1; border-color: rgba(75,216,232,.35); }
 .orbit-three { bottom: 2%; left: 10%; color: #c8b7ff; border-color: rgba(167,139,250,.35); }
+.orbit-four { top: 27%; left: -2%; color: #ead19c; border-color: rgba(217,181,109,.35); }
 
 .capability-strip {
   display: flex;
@@ -157,6 +164,7 @@ main { min-height: 100vh; overflow: hidden; }
 .project-card::before { content: ""; position: absolute; left: -1px; top: 58px; width: 2px; height: 80px; background: var(--accent); }
 .accent-cyan { --accent: var(--cyan); }
 .accent-violet { --accent: var(--violet); }
+.accent-gold { --accent: var(--gold); }
 .project-meta { display: flex; align-items: center; gap: 24px; margin-bottom: 26px; }
 .project-number { color: var(--quiet); font: 700 11px ui-monospace, monospace; }
 .project-status { display: flex; align-items: center; gap: 7px; color: #92a0ad; font: 700 9px ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
@@ -198,6 +206,16 @@ main { min-height: 100vh; overflow: hidden; }
 .ledger-bars span { color: #788591; font-size: 9px; text-transform: uppercase; }
 .ledger-bars div > i { display: block; height: 6px; background: linear-gradient(to right, var(--violet), rgba(167,139,250,.18)); }
 
+.gala-comparison { min-width: 0; padding: 20px; border: 1px solid rgba(217,181,109,.24); background: #090d12; box-shadow: 0 34px 70px rgba(0,0,0,.34); }
+.comparison-head { display: grid; grid-template-columns: 1fr 30px 1fr; align-items: center; gap: 8px; margin-bottom: 12px; color: #b2a486; font: 700 9px ui-monospace, monospace; letter-spacing: .1em; text-transform: uppercase; }
+.comparison-head span:last-child { text-align: right; }
+.comparison-head i { height: 1px; background: rgba(217,181,109,.45); }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; height: 330px; }
+.comparison-grid figure { position: relative; min-width: 0; margin: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.1); background: #10161d; }
+.comparison-grid img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.comparison-notes { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.comparison-notes span { padding: 6px 8px; border: 1px solid rgba(217,181,109,.2); color: #9b8e74; font: 600 8px ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; }
+
 footer { width: min(1240px, calc(100% - 64px)); margin: 0 auto; padding: 90px 0 75px; display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 60px; border-top: 1px solid var(--line); }
 footer h2 { margin: 15px 0 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.02; letter-spacing: -.05em; }
 .footer-note { justify-self: end; max-width: 390px; }
@@ -219,6 +237,7 @@ footer h2 { margin: 15px 0 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.
 @media (max-width: 640px) {
   .site-nav, .hero, .projects-section, footer { width: min(100% - 36px, 1240px); }
   .site-nav { height: 74px; }
+  .portfolio-brand-logo { width: 48px; height: 48px; }
   .site-nav > div { gap: 18px; }
   .hero { min-height: auto; padding: 135px 0 78px; }
   .hero h1 { font-size: 49px; }
@@ -232,6 +251,8 @@ footer h2 { margin: 15px 0 0; font-size: clamp(38px, 5vw, 64px); line-height: 1.
   .project-summary { font-size: 16px; }
   .project-footer { align-items: flex-start; flex-direction: column; }
   .product-ui { padding: 18px; transform: none; }
+  .gala-comparison { padding: 14px; }
+  .comparison-grid { height: 260px; }
   .metric-row { grid-template-columns: 1fr 1fr; }
   .metric-row div:last-child { display: none; }
   .chart-block { height: 120px; }

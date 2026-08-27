@@ -6,8 +6,12 @@ export const metadata: Metadata = {
   description:
     "Selected self-hosted software projects designed, built, and operated end-to-end by Mike Lambert.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [
+      { url: "/brand/favicon.ico", sizes: "any" },
+      { url: "/brand/favicon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    shortcut: "/brand/favicon.ico",
+    apple: "/brand/apple-touch-icon.png",
   },
 };
 

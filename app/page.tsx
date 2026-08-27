@@ -9,6 +9,31 @@ function ArrowIcon() {
 }
 
 function ProjectPreview({ project }: { project: Project }) {
+  if (project.preview === "gala") {
+    return (
+      <div className="gala-comparison" aria-label="Gala Productions wireframe and final website comparison">
+        <div className="comparison-head">
+          <span>Requested</span>
+          <i />
+          <span>Delivered</span>
+        </div>
+        <div className="comparison-grid">
+          <figure>
+            <img src="/gala/gala-wireframe-homepage.jpg" alt="Requested Gala Productions homepage wireframe" />
+          </figure>
+          <figure>
+            <img src="/gala/gala-final-homepage.jpg" alt="Final Gala Productions homepage" />
+          </figure>
+        </div>
+        <div className="comparison-notes">
+          <span>High-fidelity translation</span>
+          <span>Responsive implementation</span>
+          <span>CMS-ready handoff</span>
+        </div>
+      </div>
+    );
+  }
+
   if (project.preview === "known-state") {
     return (
       <div className="product-ui known-state-ui" aria-hidden="true">
@@ -78,7 +103,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
           {project.demoUrl && (
             <a className="project-link" href={project.demoUrl} target="_blank" rel="noreferrer">
-              Explore live demo <ArrowIcon />
+              {project.linkLabel ?? "Explore live demo"} <ArrowIcon />
             </a>
           )}
         </div>
@@ -92,7 +117,13 @@ export default function Home() {
   return (
     <main>
       <nav className="site-nav" aria-label="Primary navigation">
-        <a className="monogram" href="#top" aria-label="Mike Lambert projects home">ML<span>.</span></a>
+        <a className="monogram" href="#top" aria-label="Mike Lambert projects home">
+          <img
+            className="portfolio-brand-logo"
+            src="/brand/portfolio-logo-dark-192.png"
+            alt="Mike Lambert"
+          />
+        </a>
         <div>
           <a href="#projects">Projects</a>
           <a href="https://github.com/MichaelLambert78" target="_blank" rel="noreferrer">GitHub <ArrowIcon /></a>
@@ -110,11 +141,12 @@ export default function Home() {
           <a className="text-link" href="#projects">See the work <span>↓</span></a>
         </div>
 
-        <div className="hero-system" aria-label="Three connected software products">
+        <div className="hero-system" aria-label="A connected body of product and client work">
           <div className="system-core"><span>Built &amp;<br />operated<br />end-to-end</span></div>
           <div className="orbit orbit-one"><span>Known State</span></div>
           <div className="orbit orbit-two"><span>Job Watch</span></div>
           <div className="orbit orbit-three"><span>HomeLedger</span></div>
+          <div className="orbit orbit-four"><span>Gala</span></div>
         </div>
       </header>
 

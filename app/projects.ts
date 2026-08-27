@@ -6,9 +6,10 @@ export type Project = {
   details: string[];
   stack: string[];
   status: string;
-  accent: "coral" | "cyan" | "violet";
-  preview: "known-state" | "job-watch" | "home-ledger";
+  accent: "coral" | "cyan" | "violet" | "gold";
+  preview: "known-state" | "job-watch" | "home-ledger" | "gala";
   demoUrl?: string;
+  linkLabel?: string;
 };
 
 export const projects: Project[] = [
@@ -63,5 +64,24 @@ export const projects: Project[] = [
     status: "Private production",
     accent: "violet",
     preview: "home-ledger",
+  },
+  {
+    name: "Gala Productions",
+    eyebrow: "Client web build",
+    summary:
+      "A complete visual and content rebuild for a New York event-production company, translated from a supplied wireframe into a polished, responsive WordPress experience.",
+    outcome:
+      "Turned a sparse planning artifact into a production site with a stronger visual hierarchy, clearer service paths, venue discovery, and an editorial system the client can maintain.",
+    details: [
+      "Wireframe-to-production translation with high-fidelity responsive behavior",
+      "Custom WordPress, Impreza, WPBakery, HTML, and CSS implementation",
+      "Venue architecture, service galleries, performance tuning, and client handoff",
+    ],
+    stack: ["WordPress", "WPBakery", "HTML", "CSS", "Responsive UX"],
+    status: "Live client site",
+    accent: "gold",
+    preview: "gala",
+    demoUrl: "https://gala-productions.com/",
+    linkLabel: "View live site",
   },
 ];

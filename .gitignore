@@ -40,3 +40,9 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+/selfhost-dist/
+/tmp/pdfs/
+
+# Client-owned case-study imagery is used by the private production build but
+# is intentionally excluded from the public source repository.
+/public/gala/*.jpg
